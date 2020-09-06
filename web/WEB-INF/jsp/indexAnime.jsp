@@ -104,6 +104,7 @@
                                     <td>
                                         <a onclick="return confirm('¿Esta seguro?');" href="deleteAnime.htm?id=${temporada.id}" class="btn btn-dark">Eliminar</a>
                                     </td>
+                                    
                                 </tr>
                             </c:forEach>
                         </tbody>
