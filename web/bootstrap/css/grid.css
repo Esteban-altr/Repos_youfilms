@@ -1,0 +1,27 @@
+header{
+	background-color: #261c4e;
+	color:#fff;
+}
+
+.main{
+	background-color: #7d86c1;
+}
+
+.color1{
+	background-color: #34495e;
+	color: #fff;
+}
+
+aside{
+	background-color:#c0392b;
+	color: #fff;
+}
+
+footer{
+	background-color: #16a085;
+	color:#fff;
+}
+
+img{
+	 max-width: 100%;
+}
