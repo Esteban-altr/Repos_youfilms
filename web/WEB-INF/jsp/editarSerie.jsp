@@ -1,6 +1,6 @@
 <%-- 
-    Document   : indexAnime
-    Created on : 06-sep-2020, 10:39:41
+    Document   : editarSerie
+    Created on : 06-sep-2020, 22:02:57
     Author     : User
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -68,53 +68,60 @@
 
 
 
-        <!-- Mostrar Datos -->
+        <!-- Actualizar Datos -->
         <div class="container mt-5">
-            <div class="card  border-info">
+            <div class="card border-info">
                 <div class="card-header bg-dark">
-                    <a class="btn btn-info regDepto" href="agregarAnime.htm">Nuevo registro</a>
-                    <a class="btn btn-info regDepto" href="agregarTemporada.htm">Agreagar Temporada</a>
+                    <h5 style="color: whitesmoke;">Editar Serie</h5>
                 </div>
                 <div class="card-body text-center">
-                  
-                    <table class="table table-hover table-responsive-md table-responsive-sm table-responsive-lg">
-                        <thead class="bg-secondary">
-                            <tr>                               
-                                <th style="color: whitesmoke;">Nombre</th>                               
-                                <th style="color: whitesmoke;">Año</th>                               
-                                <th style="color: whitesmoke;">CantidadTemporadas</th>                                
-                                <th style="color: whitesmoke;">Genero</th>                                
-                                <th style="color: whitesmoke;">Temporada</th>     
-                                <th style="color: whitesmoke;">Actualizar</th>     
-                                <th style="color: whitesmoke;">Eliminar</th>
-                            </tr>
-                        </thead>
 
-                        <tbody>
-                            <c:forEach var="anime" items="${lsAnime}">
-                                <tr>                               
-                                    <td>${anime.nombre}</td>                               
-                                    <td>${anime.Ano}</td>                               
-                                    <td>${anime.CantidadTemporadas}</td>                               
-                                    <td>${anime.nomGenero}</td>                               
-                                    <td>${anime.nomTemporada}</td>
-                                    <td>
-                                        <a href="editarAnime.htm?id=${anime.id}" class="btn btn-success">Editar</a>
-                                    </td>
-                                    <td>
-                                        <a onclick="return confirm('¿Esta seguro?');" href="deleteAnime.htm?id=${anime.id}" class="btn btn-dark">Eliminar</a>
-                                    </td>
-                                    
-                                </tr>
-                            </c:forEach>
-                        </tbody>
-                    </table>
+                    <form method="POST">
+                        <label>Nombre</label>
+                        <input type="text" name="Nombre" class="form-control" value="${editSerie[0].Nombre}">   
+                        <br>
+                        <label>Año</label>
+                        <input type="text" name="Ano" class="form-control" value="${editSerie[0].Ano}">   
+                        <br>
+                        <label>Cantidad Capitulos</label>
+                        <input type="text" name="CantidadTemporadas" class="form-control" value="${editSerie[0].CantidadTemporadas}">   
+                        <br>
+                        <label>Descripción</label>
+                        <input type="text" name="Descripcion" class="form-control" value="${editSerie[0].Descripcion}">   
+                        <br>
+                        <label>Genero</label>  
+                        <select name="IdGenero" id="genero" class="form-control">
+                            <c:forEach var="genero" items="${lsGeneros}">
+                                <c:if test="${genero.id!=editSerie[0].idGenero}">
+                                    <option value="${genero.id}" >${genero.Nombre}</option>                                     
+                                </c:if>
+                                <c:if test="${genero.id==editSerie[0].idGenero}">
+                                    <option value="${genero.id}"  selected="true">${genero.Nombre}</option>                                     
+                                </c:if>
+                            </c:forEach>                                    
+                        </select> 
+                        <br>
+                        <label>Temporada</label>
+                        <select name="IdTemporada" id="temporada" class="form-control">
+                            <c:forEach var="temporada" items="${lsTemporadas}">
+                                <c:if test="${temporada.id!=editSerie[0].idTemporada}">
+                                    <option value="${temporada.id}" >${temporada.nombre}</option>                                     
+                                </c:if>
+                                <c:if test="${temporada.id==editSerie[0].idTemporada}">
+                                    <option value="${temporada.id}"  selected="true">${temporada.nombre}</option>                                     
+                                </c:if>
+                            </c:forEach>                                    
+                        </select> 
+                        <br>
+                        <input type="submit" value="Actualizar" class="btn btn-success">
+
+                    </form>
                 </div>
                 <div class="card-footer text-muted bg-dark">
-                    <a class="btn btn-outline-success" href="index.htm">Volver</a>
+                    <a class="btn btn-outline-success" href="indexSerie.htm">Volver</a>
                 </div>
             </div>
         </div>
-        <!--Fin Mostrar Datos -->
+        <!--Fin Actualizar Datos -->
     </body>
 </html>

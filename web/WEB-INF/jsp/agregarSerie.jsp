@@ -1,9 +1,9 @@
 <%-- 
-    Document   : indexAnime
-    Created on : 06-sep-2020, 10:39:41
+    Document   : agregarSerie
+    Created on : 06-sep-2020, 21:58:57
     Author     : User
 --%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -67,54 +67,49 @@
 
 
 
-
-        <!-- Mostrar Datos -->
+        <!-- Agregar Datos -->
         <div class="container mt-5">
-            <div class="card  border-info">
+            <div class="card border-info">
                 <div class="card-header bg-dark">
-                    <a class="btn btn-info regDepto" href="agregarAnime.htm">Nuevo registro</a>
-                    <a class="btn btn-info regDepto" href="agregarTemporada.htm">Agreagar Temporada</a>
+                    <h5 style="color: whitesmoke;">Agregar Serie</h5>
                 </div>
                 <div class="card-body text-center">
-                  
-                    <table class="table table-hover table-responsive-md table-responsive-sm table-responsive-lg">
-                        <thead class="bg-secondary">
-                            <tr>                               
-                                <th style="color: whitesmoke;">Nombre</th>                               
-                                <th style="color: whitesmoke;">Año</th>                               
-                                <th style="color: whitesmoke;">CantidadTemporadas</th>                                
-                                <th style="color: whitesmoke;">Genero</th>                                
-                                <th style="color: whitesmoke;">Temporada</th>     
-                                <th style="color: whitesmoke;">Actualizar</th>     
-                                <th style="color: whitesmoke;">Eliminar</th>
-                            </tr>
-                        </thead>
 
-                        <tbody>
-                            <c:forEach var="anime" items="${lsAnime}">
-                                <tr>                               
-                                    <td>${anime.nombre}</td>                               
-                                    <td>${anime.Ano}</td>                               
-                                    <td>${anime.CantidadTemporadas}</td>                               
-                                    <td>${anime.nomGenero}</td>                               
-                                    <td>${anime.nomTemporada}</td>
-                                    <td>
-                                        <a href="editarAnime.htm?id=${anime.id}" class="btn btn-success">Editar</a>
-                                    </td>
-                                    <td>
-                                        <a onclick="return confirm('¿Esta seguro?');" href="deleteAnime.htm?id=${anime.id}" class="btn btn-dark">Eliminar</a>
-                                    </td>
-                                    
-                                </tr>
+                    <form method="POST">
+                        <label>Nombre</label>
+                        <input type="text" name="Nombre" class="form-control">   
+                        <br>
+                        <label>Año</label>
+                        <input type="text" name="Ano" class="form-control">   
+                        <br>
+                        <label>CantidadTemporadas</label>
+                        <input type="text" name="CantidadTemporadas" class="form-control">   
+                        <br>
+                        <label>Descripción</label>
+                        <input type="text" name="Descripcion" class="form-control">   
+                        <br>
+                        <label>Genero</label>                        
+                         <select name="IdGenero" id="genero" class="form-control">
+                            <c:forEach var="genero" items="${lsGeneros}">
+                                <option value="${genero.id}" >${genero.nombre}</option>   
                             </c:forEach>
-                        </tbody>
-                    </table>
+                        </select>  
+                        <br>
+                        <label>Temporada</label>                       
+                         <select name="IdTemporada" id="temporada" class="form-control">
+                            <c:forEach var="temporada" items="${lsTemporadas}">
+                                <option value="${temporada.id}" >${temporada.nombre}</option>   
+                            </c:forEach>
+                        </select> 
+                        <input type="submit" value="Agregar" class="btn btn-success">
+
+                    </form>
                 </div>
                 <div class="card-footer text-muted bg-dark">
-                    <a class="btn btn-outline-success" href="index.htm">Volver</a>
+                    <a class="btn btn-outline-success" href="indexSerie.htm">Volver</a>
                 </div>
             </div>
         </div>
-        <!--Fin Mostrar Datos -->
+        <!--Fin Agregar Datos -->
     </body>
 </html>

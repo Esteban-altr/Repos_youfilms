@@ -1,6 +1,6 @@
 <%-- 
-    Document   : indexAnime
-    Created on : 06-sep-2020, 10:39:41
+    Document   : indexSerie
+    Created on : 06-sep-2020, 21:53:52
     Author     : User
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -72,7 +72,7 @@
         <div class="container mt-5">
             <div class="card  border-info">
                 <div class="card-header bg-dark">
-                    <a class="btn btn-info regDepto" href="agregarAnime.htm">Nuevo registro</a>
+                    <a class="btn btn-info regDepto" href="agregarSerie.htm">Nuevo registro</a>
                     <a class="btn btn-info regDepto" href="agregarTemporada.htm">Agreagar Temporada</a>
                 </div>
                 <div class="card-body text-center">
@@ -83,6 +83,7 @@
                                 <th style="color: whitesmoke;">Nombre</th>                               
                                 <th style="color: whitesmoke;">Año</th>                               
                                 <th style="color: whitesmoke;">CantidadTemporadas</th>                                
+                                <th style="color: whitesmoke;">Descripcion</th>                                
                                 <th style="color: whitesmoke;">Genero</th>                                
                                 <th style="color: whitesmoke;">Temporada</th>     
                                 <th style="color: whitesmoke;">Actualizar</th>     
@@ -91,18 +92,19 @@
                         </thead>
 
                         <tbody>
-                            <c:forEach var="anime" items="${lsAnime}">
+                            <c:forEach var="serie" items="${lsSerie}">
                                 <tr>                               
-                                    <td>${anime.nombre}</td>                               
-                                    <td>${anime.Ano}</td>                               
-                                    <td>${anime.CantidadTemporadas}</td>                               
-                                    <td>${anime.nomGenero}</td>                               
-                                    <td>${anime.nomTemporada}</td>
+                                    <td>${serie.nombre}</td>                               
+                                    <td>${serie.Ano}</td>                               
+                                    <td>${serie.CantidadTemporadas}</td>                               
+                                    <td>${serie.Descripcion}</td>                               
+                                    <td>${serie.nomGenero}</td>                               
+                                    <td>${serie.nomTemporada}</td>
                                     <td>
-                                        <a href="editarAnime.htm?id=${anime.id}" class="btn btn-success">Editar</a>
+                                        <a href="editarSerie.htm?id=${serie.id}" class="btn btn-success">Editar</a>
                                     </td>
                                     <td>
-                                        <a onclick="return confirm('¿Esta seguro?');" href="deleteAnime.htm?id=${anime.id}" class="btn btn-dark">Eliminar</a>
+                                        <a onclick="return confirm('¿Esta seguro?');" href="deleteAnime.htm?id=${serie.id}" class="btn btn-dark">Eliminar</a>
                                     </td>
                                     
                                 </tr>
