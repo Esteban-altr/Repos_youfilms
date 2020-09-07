@@ -75,7 +75,7 @@
                     <a class="btn btn-info regDepto" href="agregarSerie.htm">Nuevo registro</a>
                     <a class="btn btn-info regDepto" href="agregarTemporada.htm">Agreagar Temporada</a>
                 </div>
-                <div class="card-body text-center">
+                <div class="card-body text-justify">
                   
                     <table class="table table-hover table-responsive-md table-responsive-sm table-responsive-lg">
                         <thead class="bg-secondary">
