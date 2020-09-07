@@ -39,7 +39,7 @@ public List buscar(int id){
 
 
 public void actualizar(Serie s){
-        String sql="update anime set "
+        String sql="update serie set "
                 + "Nombre=?,Ano=?,CantidadTemporadas=?,Descripcion=?,IdGenero=?,IdTemporada=?  where id=?";
                 jdbctemplate.update(sql,s.getNombre(),s.getAno(),s.getCantidadTemporadas(),s.getDescripcion(),s.getIdGenero(),s.getIdTemporada(), s.getId());        
     }
