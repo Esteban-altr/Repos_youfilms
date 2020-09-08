@@ -51,7 +51,7 @@
                         <a href="indexSerie.htm" class="nav-link">Serie</a>
                     </li>
                     <li class="nav-item">
-                        <a href="indexSerieGenero.htm" class="nav-link">SerieGenero</a>
+                        <a href="indexSerieGenero.htm" class="nav-link">Serie Genero</a>
                     </li>
                     <li class="nav-item">
                         <a href="indexTemporada.htm" class="nav-link">Temporada</a>
