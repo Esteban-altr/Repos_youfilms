@@ -35,12 +35,8 @@ public List buscar(int id){
         datos=jdbctemplate.queryForList(sql);
         return datos;
     }
-
-
-
 public void actualizar(Genero g){
-        String sql="update genero set "
-                + "Nombre=? where id=?";
+        String sql="update genero set " + "Nombre=? where id=?";
                 jdbctemplate.update(sql,g.getNombre(),g.getid());        
     }
 

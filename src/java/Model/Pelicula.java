@@ -5,20 +5,20 @@
  */
 package Model;
 
+/**import Model.Genero
+
+
 /**
  *
- * @author User
+ * @author Usuario
  */
-public class Anime {
-    
-    
+public class Pelicula {
     private int id;
     private String Nombre;
-    private String Ano;
-    private int CantidadTemporadas;
+    private String año;
+    private String Fechalanzamiento;
     private int IdGenero;
-    private int IdTemporada;
-
+    
     public int getId() {
         return id;
     }
@@ -26,7 +26,7 @@ public class Anime {
     public void setId(int id) {
         this.id = id;
     }
-
+    
     public String getNombre() {
         return Nombre;
     }
@@ -35,20 +35,20 @@ public class Anime {
         this.Nombre = Nombre;
     }
 
-    public String getAno() {
-        return Ano;
+    public String getAño() {
+        return año;
     }
 
-    public void setAno(String Ano) {
-        this.Ano = Ano;
+    public void setAño(String año) {
+        this.año = año;
     }
 
-    public int getCantidadTemporadas() {
-        return CantidadTemporadas;
+    public String getFechalanzamiento() {
+        return Fechalanzamiento;
     }
 
-    public void setCantidadTemporadas(int CantidadTemporadas) {
-        this.CantidadTemporadas = CantidadTemporadas;
+    public void setFechalanzamiento(String Fechalanzamiento) {
+        this.Fechalanzamiento = Fechalanzamiento;
     }
 
     public int getIdGenero() {
@@ -57,13 +57,5 @@ public class Anime {
 
     public void setIdGenero(int IdGenero) {
         this.IdGenero = IdGenero;
-    }
-
-    public int getIdTemporada() {
-        return IdTemporada;
-    }
-
-    public void setIdTemporada(int IdTemporada) {
-        this.IdTemporada = IdTemporada;
     }
 }
