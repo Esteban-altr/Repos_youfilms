@@ -24,6 +24,8 @@
                 <prop key="agregarGenero.htm">GeneroController</prop>
                 <prop key="editarGenero.htm">GeneroController</prop>
                 <prop key="deleteGenero.htm">GeneroController</prop>
+                <prop key="indexPelicula.htm">PeliculaController</prop>
+                <prop key="editarPelicula.htm">PeliculaController</prop>
                 <prop key="indexTemporada.htm">TemporadaController</prop>
                 <prop key="agregarTemporada.htm">TemporadaController</prop>
                 <prop key="editarTemporada.htm">TemporadaController</prop>
