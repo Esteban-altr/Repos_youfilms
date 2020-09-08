@@ -36,6 +36,10 @@
                 <prop key="agregarSerie.htm">SerieController</prop>
                 <prop key="editarSerie.htm">SerieController</prop>
                 <prop key="deleteSerie.htm">SerieController</prop>
+                <prop key="indexSerieGenero.htm">SerieGeneroController</prop>
+                <prop key="agregarSerieGenero.htm">SerieGeneroController</prop>
+                <prop key="editarSerieGenero.htm">SerieGeneroController</prop>
+                <prop key="deleteSerieGenero.htm">SerieGeneroController</prop>
             </props>
         </property>
     </bean>
@@ -53,4 +57,5 @@
     <bean name="TemporadaController" class="Controller.TemporadaController"/>
     <bean name="AnimeController" class="Controller.AnimeController" />
     <bean name="SerieController" class="Controller.SerieController" />
+    <bean name="SerieGeneroController" class="Controller.SerieGeneroController" />
 </beans>

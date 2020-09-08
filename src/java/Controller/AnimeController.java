@@ -46,8 +46,8 @@ public class AnimeController {
         return mav;
     } 
     @RequestMapping(value="agregarAnime.htm",method=RequestMethod.POST)
-    public ModelAndView Agregar(Anime t){        
-        animeBL.insertar(t);
+    public ModelAndView Agregar(Anime a){        
+        animeBL.insertar(a);
         return new ModelAndView("redirect:/indexAnime.htm");
     }
     
