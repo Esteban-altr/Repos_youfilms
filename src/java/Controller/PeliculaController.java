@@ -23,11 +23,11 @@ public class PeliculaController {
     int id;
     List datos;
     
-    @RequestMapping ("indexPeliculaspelis.htm")
+    @RequestMapping ("indexPelicula.htm")
     public ModelAndView Listar(){
     datos=peliculaBL.listar();
     mav.addObject("lsPelicula",datos);
-    mav.setViewName("indexPeliculaspelis");
+    mav.setViewName("indexPelicula");
     return mav;
     }
     
@@ -36,37 +36,37 @@ public class PeliculaController {
         mav.addObject(new Pelicula());
         datos = generoBL.listar();
         mav.addObject("lsGeneros", datos);
-        mav.setViewName("agregarPeliculaspelis");
+        mav.setViewName("agregarPelicula");
         return mav;
     } 
     @RequestMapping(value="agregarPeliculaspelis.htm",method=RequestMethod.POST)
     public ModelAndView Agregar(Pelicula p){        
         peliculaBL.insertar(p);
-        return new ModelAndView("redirect:/indexPeliculaspelis.htm");
+        return new ModelAndView("redirect:/indexPelicula.htm");
     }
     
-    @RequestMapping(value="editarPeliculaspelis.htm",method=RequestMethod.GET)
+    @RequestMapping(value="editarPelicula.htm",method=RequestMethod.GET)
     public ModelAndView Editar(HttpServletRequest request){
         id=Integer.parseInt(request.getParameter("id"));
         datos=peliculaBL.buscar(id);
         mav.addObject("editPeliculaspelis", datos);
         datos=generoBL.listar();
         mav.addObject("lsGeneros", datos);
-        mav.setViewName("editarPeliculaspelis");
+        mav.setViewName("editarPelicula");
         return mav;
     }
     
-     @RequestMapping(value="editarPeliculaspelis.htm",method=RequestMethod.POST)
+     @RequestMapping(value="editarPelicula.htm",method=RequestMethod.POST)
     public ModelAndView Editar(Pelicula p)
     {
         peliculaBL.actualizar(p);
-        return new ModelAndView("redirect:/indexPeliculaspelis.htm");
+        return new ModelAndView("redirect:/indexPelicula.htm");
     }
     
-    @RequestMapping("deletePeliculaspelis.htm")
+    @RequestMapping("deletePelicula.htm")
     public ModelAndView Delete(HttpServletRequest request){
         id=Integer.parseInt(request.getParameter("id"));
         peliculaBL.eliminar(id);
-        return new ModelAndView("redirect:/indexPeliculaspelis.htm"); 
+        return new ModelAndView("redirect:/indexPelicula.htm"); 
     }  
 }
