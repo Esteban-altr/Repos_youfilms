@@ -17,24 +17,16 @@ public class PeliculaBL {
     public List listar(){
         return peliculaDL.listar();
     }
-    public void insertar(PeliculaDL p){
+    public void insertar(Pelicula p){
         peliculaDL.insertar(p);
     }
     public List buscar(int id){
         return peliculaDL.buscar(id);
     }
-    public void actualizar(PeliculaDL p){
+    public void actualizar(Pelicula p){
         peliculaDL.actualizar(p);
     }
     public void eliminar(int id){
         peliculaDL.eliminar(id);
-    }   
-
-    public void insertar(Pelicula p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void actualizar(Pelicula p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
