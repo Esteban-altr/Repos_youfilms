@@ -33,7 +33,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <c:forEach var="Pelicula" items="${lsPelicula}">
+                        <c:forEach var="Pelicula" items="${lsGenero}">
                             <tr>
                                 <td>${Pelicula.nombre}</td>
                                 <td>${Pelicula.Año}</td>
