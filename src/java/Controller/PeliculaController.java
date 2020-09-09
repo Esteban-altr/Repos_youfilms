@@ -31,7 +31,7 @@ public class PeliculaController {
     return mav;
     }
     
-    @RequestMapping(value="agregarPeliculaspelis.htm",method=RequestMethod.GET)
+    @RequestMapping(value="agregarPelicula.htm",method=RequestMethod.GET)
     public ModelAndView Agregar(){
         mav.addObject(new Pelicula());
         datos = generoBL.listar();
@@ -39,7 +39,7 @@ public class PeliculaController {
         mav.setViewName("agregarPelicula");
         return mav;
     } 
-    @RequestMapping(value="agregarPeliculaspelis.htm",method=RequestMethod.POST)
+    @RequestMapping(value="agregarPelicula.htm",method=RequestMethod.POST)
     public ModelAndView Agregar(Pelicula p){        
         peliculaBL.insertar(p);
         return new ModelAndView("redirect:/indexPelicula.htm");
@@ -49,7 +49,7 @@ public class PeliculaController {
     public ModelAndView Editar(HttpServletRequest request){
         id=Integer.parseInt(request.getParameter("id"));
         datos=peliculaBL.buscar(id);
-        mav.addObject("editPeliculaspelis", datos);
+        mav.addObject("editPelicula", datos);
         datos=generoBL.listar();
         mav.addObject("lsGeneros", datos);
         mav.setViewName("editarPelicula");
