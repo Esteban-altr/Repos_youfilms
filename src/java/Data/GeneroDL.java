@@ -31,7 +31,7 @@ public void insertar(Genero g){
     }
 
 public List buscar(int id){
-        String sql="select * from genero where id="+ id;
+        String sql="select * from genero where id=" + id;
         datos=jdbctemplate.queryForList(sql);
         return datos;
     }
