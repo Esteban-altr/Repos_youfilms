@@ -15,6 +15,7 @@ public class Pelicula {
     private String Ano;
     private String FechaLanzamiento;
     private int IdGenero;
+    private String linkImg;
     
     public int getId() {
         return id;
@@ -54,5 +55,13 @@ public class Pelicula {
 
     public void setFechaLanzamiento(String FechaLanzamiento) {
         this.FechaLanzamiento = FechaLanzamiento;
+    }
+
+    public String getLinkImg() {
+        return linkImg;
+    }
+
+    public void setLinkImg(String linkImg) {
+        this.linkImg = linkImg;
     }
 }

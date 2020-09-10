@@ -1,20 +1,21 @@
 <%-- 
-    Document   : agregarAnime
-    Created on : 06-sep-2020, 10:50:49
-    Author     : User
+    Document   : editarPelicula
+    Created on : 9/09/2020, 09:58:42 AM
+    Author     : Usuario
 --%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+         <link href="bootstrap/css/proyecto.css" rel="stylesheet" type="text/css">
         <script src="js/popper.min.js" type="text/javascript"></script>
         <script src="js/jquery-3.4.1.js" type="text/javascript"></script>
         <script src="js/jquery.min.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
-        <title>JSP Page</title>
+        <title>Editar Pelicula</title>
     </head>
     <body>
         <!-- Navbar -->
@@ -66,46 +67,54 @@
 
 
 
-        <!-- Agregar Datos -->
+
+        <!-- Actualizar Datos -->
         <div class="container mt-5">
             <div class="card border-info">
                 <div class="card-header bg-dark">
-                    <h5 style="color: whitesmoke;">Agregar Anime</h5>
+                    <h5 style="color: whitesmoke;">Editar Pelicula</h5>
                 </div>
                 <div class="card-body text-center">
 
-                    <form method="POST">
-                        <label>Nombre</label>
-                        <input type="text" name="Nombre" class="form-control">   
-                        <br>
-                        <label>Año</label>
-                        <input type="text" name="Ano" class="form-control">   
-                        <br>
-                        <label>CantidadTemporadas</label>
-                        <input type="text" name="CantidadTemporadas" class="form-control">   
-                        <br>
-                        <label>Genero</label>                        
-                         <select name="IdGenero" id="genero" class="form-control">
-                            <c:forEach var="genero" items="${lsGeneros}">
-                                <option value="${genero.id}" >${genero.nombre}</option>   
-                            </c:forEach>
-                        </select>  
-                        <br>
-                        <label>Temporada</label>                       
-                         <select name="IdTemporada" id="temporada" class="form-control">
-                            <c:forEach var="temporada" items="${lsTemporadas}">
-                                <option value="${temporada.id}" >${temporada.nombre}</option>   
-                            </c:forEach>
-                        </select> 
-                        <input type="submit" value="Agregar" class="btn btn-success">
-
-                    </form>
+        <form method="POST">
+            <div class="imagen">
+                <img src="${editPelicula[0].LinkImg}"/>		
+            </div>
+            <div class="contenedor">
+                <label>Nombre</label>
+                <input type="text" name="Nombre" class="form-control" value="${editPelicula[0].Nombre}">   
+                <br>
+                <label>Año</label>
+                <input type="text" name="Ano" class="form-control" value="${editPelicula[0].Ano}">   
+                <br>
+                <label>Fecha de carga</label>
+                <input type="text" name="FechaLanzamiento" class="form-control" value="${editPelicula[0].FechaLanzamiento}">   
+                <br>
+                <br>f
+                <label>link img</label>
+                <input type="text" name="LinkImg" class="form-control" value="${editPelicula[0].LinkImg}">   
+                <br>
+                <label>Genero</label>  
+                <select name="IdGenero" id="genero" class="form-control">
+                    <c:forEach var="genero" items="${lsGeneros}">
+                        <c:if test="${genero.id!=editPelicula[0].idGenero}">
+                            <option value="${genero.id}" >${genero.Nombre}</option>                                     
+                        </c:if>
+                        <c:if test="${genero.id==editPelicula[0].idGenero}">
+                            <option value="${genero.id}"  selected="">${genero.Nombre}</option>                                     
+                        </c:if>
+                    </c:forEach>                                    
+                </select> 
+                <input type="submit" value="Actualizar" class="btn btn-success">
+            </div>
+        </form>
                 </div>
                 <div class="card-footer text-muted bg-dark">
                     <a class="btn btn-outline-success" href="indexAnime.htm">Volver</a>
                 </div>
             </div>
         </div>
-        <!--Fin Agregar Datos -->
+        <!--Fin Actualizar Datos -->
     </body>
 </html>
+

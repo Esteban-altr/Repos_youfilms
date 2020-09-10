@@ -1,7 +1,7 @@
 <%-- 
-    Document   : agregarAnime
-    Created on : 06-sep-2020, 10:50:49
-    Author     : User
+    Document   : agregarCapitulo
+    Created on : 9/09/2020, 08:18:13 PM
+    Author     : Usuario
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -70,39 +70,28 @@
         <div class="container mt-5">
             <div class="card border-info">
                 <div class="card-header bg-dark">
-                    <h5 style="color: whitesmoke;">Agregar Anime</h5>
+                    <h5 style="color: whitesmoke;">Agregar Capitulo</h5>
                 </div>
                 <div class="card-body text-center">
 
                     <form method="POST">
+                        <label>Numero del Capitulo</label>
+                        <input type="text" name="NumeroCapitulo" class="form-control">   
+                        <br>
                         <label>Nombre</label>
                         <input type="text" name="Nombre" class="form-control">   
-                        <br>
-                        <label>Año</label>
-                        <input type="text" name="Ano" class="form-control">   
-                        <br>
-                        <label>CantidadTemporadas</label>
-                        <input type="text" name="CantidadTemporadas" class="form-control">   
-                        <br>
-                        <label>Genero</label>                        
-                         <select name="IdGenero" id="genero" class="form-control">
-                            <c:forEach var="genero" items="${lsGeneros}">
-                                <option value="${genero.id}" >${genero.nombre}</option>   
-                            </c:forEach>
-                        </select>  
-                        <br>
+                        <br> 
                         <label>Temporada</label>                       
-                         <select name="IdTemporada" id="temporada" class="form-control">
-                            <c:forEach var="temporada" items="${lsTemporadas}">
-                                <option value="${temporada.id}" >${temporada.nombre}</option>   
+                        <select name="IdTemporada" id="IdTemporada" class="form-control">
+                            <c:forEach var="temporada" items="${lsTemporada}">
+                                <option value="${temporada.id}" >${temporada.Nombre}</option>   
                             </c:forEach>
                         </select> 
                         <input type="submit" value="Agregar" class="btn btn-success">
-
                     </form>
                 </div>
                 <div class="card-footer text-muted bg-dark">
-                    <a class="btn btn-outline-success" href="indexAnime.htm">Volver</a>
+                    <a class="btn btn-outline-success" href="indexCapitulo.htm">Volver</a>
                 </div>
             </div>
         </div>

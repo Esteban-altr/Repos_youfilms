@@ -1,9 +1,9 @@
 <%-- 
-    Document   : agregarAnime
-    Created on : 06-sep-2020, 10:50:49
-    Author     : User
+    Document   : editarCapitulo
+    Created on : 9/09/2020, 08:50:52 PM
+    Author     : Usuario
 --%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,7 +14,7 @@
         <script src="js/jquery-3.4.1.js" type="text/javascript"></script>
         <script src="js/jquery.min.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
-        <title>JSP Page</title>
+        <title>Editar Capitulo</title>
     </head>
     <body>
         <!-- Navbar -->
@@ -66,46 +66,42 @@
 
 
 
-        <!-- Agregar Datos -->
+
+        <!-- Actualizar Datos -->
         <div class="container mt-5">
             <div class="card border-info">
                 <div class="card-header bg-dark">
-                    <h5 style="color: whitesmoke;">Agregar Anime</h5>
+                    <h5 style="color: whitesmoke;">Editar Capitulo</h5>
                 </div>
                 <div class="card-body text-center">
-
                     <form method="POST">
+                        <label>Numero del Capitulo</label>
+                        <input type="text" name="NumeroCapitulo" class="form-control" value="${editCapitulo[0].NumeroCapitulo}">   
+                        <br>
                         <label>Nombre</label>
-                        <input type="text" name="Nombre" class="form-control">   
+                        <input type="text" name="Nombre" class="form-control" value="${editCapitulo[0].Nombre}">   
                         <br>
-                        <label>Año</label>
-                        <input type="text" name="Ano" class="form-control">   
-                        <br>
-                        <label>CantidadTemporadas</label>
-                        <input type="text" name="CantidadTemporadas" class="form-control">   
-                        <br>
-                        <label>Genero</label>                        
-                         <select name="IdGenero" id="genero" class="form-control">
-                            <c:forEach var="genero" items="${lsGeneros}">
-                                <option value="${genero.id}" >${genero.nombre}</option>   
-                            </c:forEach>
-                        </select>  
-                        <br>
-                        <label>Temporada</label>                       
-                         <select name="IdTemporada" id="temporada" class="form-control">
-                            <c:forEach var="temporada" items="${lsTemporadas}">
-                                <option value="${temporada.id}" >${temporada.nombre}</option>   
-                            </c:forEach>
+                        <label>${editCapitulo[0].NomTemporada}</label>
+                        <select name="IdTemporada" id="temporada" class="form-control">
+                            <c:forEach var="temporada" items="${lsTemporada}">
+                                <c:if test="${temporada.id!=editCapitulo[0].idTemporada}">
+                                    <option value="${temporada.id}" >${temporada.nombre}</option>                                     
+                                </c:if>
+                                <c:if test="${temporada.id==editCapitulo[0].idTemporada}">
+                                    <option value="${temporada.id}"  selected="">${temporada.nombre}</option>                                     
+                                </c:if>
+                            </c:forEach>                                    
                         </select> 
-                        <input type="submit" value="Agregar" class="btn btn-success">
+                        <br>
+                        <input type="submit" value="Actualizar" class="btn btn-success">
 
                     </form>
                 </div>
                 <div class="card-footer text-muted bg-dark">
-                    <a class="btn btn-outline-success" href="indexAnime.htm">Volver</a>
+                    <a class="btn btn-outline-success" href="indexCapitulo.htm">Volver</a>
                 </div>
             </div>
         </div>
-        <!--Fin Agregar Datos -->
+        <!--Fin Actualizar Datos -->
     </body>
 </html>
