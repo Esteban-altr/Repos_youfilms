@@ -20,30 +20,42 @@
         <property name="mappings">
             <props>
                 <prop key="index.htm">HomeController</prop>
+                
                 <prop key="indexGenero.htm">GeneroController</prop>
                 <prop key="agregarGenero.htm">GeneroController</prop>
                 <prop key="editarGenero.htm">GeneroController</prop>
                 <prop key="deleteGenero.htm">GeneroController</prop>
+                
                 <prop key="indexPelicula.htm">PeliculaController</prop>
                 <prop key="agregarPelicula.htm">PeliculaController</prop>
                 <prop key="editarPelicula.htm">PeliculaController</prop>
                 <prop key="deletePelicula.htm">PeliculaController</prop>
+                
+                <prop key="indexPelisGenero.htm">PelisGeneroController</prop>
+                <prop key="agregarPelisGenero.htm">PelisGeneroController</prop>
+                <prop key="editarPelisGenero.htm">PelisGeneroController</prop>
+                <prop key="deletePelisGenero.htm">PelisGeneroController</prop>
+                
                 <prop key="indexTemporada.htm">TemporadaController</prop>
                 <prop key="agregarTemporada.htm">TemporadaController</prop>
                 <prop key="editarTemporada.htm">TemporadaController</prop>
                 <prop key="deleteTemporada.htm">TemporadaController</prop>
+                
                 <prop key="indexAnime.htm">AnimeController</prop>
                 <prop key="agregarAnime.htm">AnimeController</prop>
                 <prop key="editarAnime.htm">AnimeController</prop>
                 <prop key="deleteAnime.htm">AnimeController</prop>
+                
                 <prop key="indexCapitulo.htm">CapituloController</prop>
                 <prop key="agregarCapitulo.htm">CapituloController</prop>
                 <prop key="editarCapitulo.htm">CapituloController</prop>
                 <prop key="deleteCapitulo.htm">CapituloController</prop>
+                
                 <prop key="indexSerie.htm">SerieController</prop>
                 <prop key="agregarSerie.htm">SerieController</prop>
                 <prop key="editarSerie.htm">SerieController</prop>
                 <prop key="deleteSerie.htm">SerieController</prop>
+                
                 <prop key="indexSerieGenero.htm">SerieGeneroController</prop>
                 <prop key="agregarSerieGenero.htm">SerieGeneroController</prop>
                 <prop key="editarSerieGenero.htm">SerieGeneroController</prop>
@@ -63,6 +75,7 @@
     <bean name="HomeController" class="Controller.HomeController"/>
     <bean name="GeneroController" class="Controller.GeneroController"/>
     <bean name="PeliculaController" class="Controller.PeliculaController"/>
+    <bean name="PelisGeneroController" class="Controller.PelisGeneroController"/>
     <bean name="TemporadaController" class="Controller.TemporadaController"/>
     <bean name="AnimeController" class="Controller.AnimeController" />
     <bean name="CapituloController" class="Controller.CapituloController"/>

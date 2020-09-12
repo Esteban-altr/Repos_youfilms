@@ -1,7 +1,7 @@
 <%-- 
-    Document   : agregarSerieGenero
-    Created on : 07-sep-2020, 17:47:46
-    Author     : User
+    Document   : agregarPelisGenero
+    Created on : 11/09/2020, 08:30:35 PM
+    Author     : Usuario
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -14,7 +14,8 @@
         <script src="js/jquery-3.4.1.js" type="text/javascript"></script>
         <script src="js/jquery.min.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
-        <title>JSP Page</title>
+        <title>agregarPelisGenero</title>
+        
     </head>
     <body>
         <!-- Navbar -->
@@ -76,16 +77,16 @@
 
                     <form method="POST">                  
                         <label>Serie</label>                       
-                         <select name="IdSerie" id="serie" class="form-control">
-                            <c:forEach var="serie" items="${lsSeries}">
-                                <option value="${serie.id}" >${serie.Nombre}</option>   
+                         <select name="IdPelicula" id="pelicula" class="form-control">
+                            <c:forEach var="pelicula" items="${lsPelicula}">
+                                <option value="${pelicula.id}" >${pelicula.Nombre}</option>   
                             </c:forEach>
                         </select> 
                         <br>
                         <label>Genero</label>                        
                          <select name="IdGenero" id="genero" class="form-control">
                             <c:forEach var="genero" items="${lsGeneros}">
-                                <option value="${genero.id}" >${genero.nombre}</option>   
+                                <option value="${genero.id}" >${genero.Nombre}</option>   
                             </c:forEach>
                         </select>  
                         <br>
@@ -94,7 +95,7 @@
                     </form>
                 </div>
                 <div class="card-footer text-muted bg-dark">
-                    <a class="btn btn-outline-success" href="indexSerieGenero.htm">Volver</a>
+                    <a class="btn btn-outline-success" href="indexPelisGenero.htm">Volver</a>
                 </div>
             </div>
         </div>

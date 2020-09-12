@@ -10,7 +10,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-
         <script src="js/popper.min.js" type="text/javascript"></script>
         <script src="js/jquery-3.4.1.js" type="text/javascript"></script>
         <script src="js/jquery.min.js" type="text/javascript"></script>
@@ -74,9 +73,8 @@
                 <div class="card-header bg-dark">
                     <h5 style="color: whitesmoke;">Editar SerieGenero</h5>
                 </div>
-                <div class="card-body text-center">
-
-                    <form method="POST">
+                <div class="card-body text-center">                    
+                   <form method="POST">
                         <br>
                         
                         <label>Serie</label>

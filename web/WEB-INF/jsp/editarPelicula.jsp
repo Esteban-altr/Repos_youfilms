@@ -90,7 +90,7 @@
                 <label>Fecha de carga</label>
                 <input type="text" name="FechaLanzamiento" class="form-control" value="${editPelicula[0].FechaLanzamiento}">   
                 <br>
-                <br>f
+                <br>
                 <label>link img</label>
                 <input type="text" name="LinkImg" class="form-control" value="${editPelicula[0].LinkImg}">   
                 <br>

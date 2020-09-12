@@ -84,6 +84,9 @@
                         <label>CantidadTemporadas</label>
                         <input type="text" name="CantidadTemporadas" class="form-control">   
                         <br>
+                        <label>Link de la caratula</label>
+                        <input type="text" name="LinkImg" class="form-control">   
+                        <br>
                         <label>Genero</label>                        
                          <select name="IdGenero" id="genero" class="form-control">
                             <c:forEach var="genero" items="${lsGeneros}">

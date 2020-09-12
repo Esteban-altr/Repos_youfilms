@@ -16,6 +16,7 @@ public class Anime {
     private String Nombre;
     private String Ano;
     private int CantidadTemporadas;
+    private String linkImg;
     private int IdGenero;
     private int IdTemporada;
 
@@ -65,5 +66,13 @@ public class Anime {
 
     public void setIdTemporada(int IdTemporada) {
         this.IdTemporada = IdTemporada;
+    }
+
+    public String getLinkImg() {
+        return linkImg;
+    }
+
+    public void setLinkImg(String linkImg) {
+        this.linkImg = linkImg;
     }
 }

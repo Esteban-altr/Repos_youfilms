@@ -19,15 +19,15 @@ public class AnimeDL {
     List datos;
     
     public List listar() {
-        String sql = "select a.id,a.Nombre,a.Ano,a.CantidadTemporadas, g.Nombre as nomGenero, t.Nombre as nomTemporada from temporada t, anime a, genero g where a.IdGenero=g.id AND a.IdTemporada=t.id";
+        String sql = "select a.id, a.Nombre, a.Ano, a.CantidadTemporadas, a.linkImg, g.Nombre as nomGenero, t.Nombre as nomTemporada from temporada t, anime a, genero g where a.IdGenero=g.id AND a.IdTemporada=t.id";
         datos = jdbctemplate.queryForList(sql);
         return datos;
     }
     
 public void insertar(Anime a){
         String sql="insert into anime "
-                + "(Nombre,Ano,CantidadTemporadas,IdGenero,IdTemporada) values (?,?,?,?,?)";       
-        jdbctemplate.update(sql, a.getNombre(), a.getAno(), a.getCantidadTemporadas(), a.getIdGenero(), a.getIdTemporada());        
+                + "(Nombre,Ano,CantidadTemporadas,linkImg,IdGenero,IdTemporada) values (?,?,?,?,?,?)";       
+        jdbctemplate.update(sql, a.getNombre(), a.getAno(), a.getCantidadTemporadas(), a.getLinkImg(), a.getIdGenero(), a.getIdTemporada());        
     }
 
 public List buscar(int id){
@@ -40,8 +40,8 @@ public List buscar(int id){
 
 public void actualizar(Anime a){
         String sql="update anime set "
-                + "Nombre=?,Ano=?,CantidadTemporadas=?,IdGenero=?,IdTemporada=?  where id=?";
-                jdbctemplate.update(sql,a.getNombre(),a.getAno(),a.getCantidadTemporadas(),a.getIdGenero(),a.getIdTemporada(), a.getId());        
+                + "Nombre=?,Ano=?,CantidadTemporadas=?,linkImg=?,IdGenero=?,IdTemporada=?  where id=?";
+                jdbctemplate.update(sql,a.getNombre(),a.getAno(),a.getCantidadTemporadas(),a.getLinkImg(),a.getIdGenero(),a.getIdTemporada(), a.getId());        
     }
 
 public void eliminar(int id){

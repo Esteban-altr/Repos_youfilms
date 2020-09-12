@@ -1,7 +1,7 @@
 <%-- 
-    Document   : agregarSerieGenero
-    Created on : 07-sep-2020, 17:47:46
-    Author     : User
+    Document   : indexPelisGenero
+    Created on : 11/09/2020, 08:13:17 PM
+    Author     : Usuario
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -14,7 +14,7 @@
         <script src="js/jquery-3.4.1.js" type="text/javascript"></script>
         <script src="js/jquery.min.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
-        <title>JSP Page</title>
+        <title>Index Pelis Genero</title>
     </head>
     <body>
         <!-- Navbar -->
@@ -66,38 +66,47 @@
 
 
 
-        <!-- Agregar Datos -->
+
+        <!-- Mostrar Datos -->
         <div class="container mt-5">
-            <div class="card border-info">
+            <div class="card  border-info">
                 <div class="card-header bg-dark">
-                    <h5 style="color: whitesmoke;">Agregar SerieGenero</h5>
+                    <a class="btn btn-info regDepto" href="agregarPelisGenero.htm">Nuevo registro</a>
                 </div>
                 <div class="card-body text-center">
 
-                    <form method="POST">                  
-                        <label>Serie</label>                       
-                         <select name="IdSerie" id="serie" class="form-control">
-                            <c:forEach var="serie" items="${lsSeries}">
-                                <option value="${serie.id}" >${serie.Nombre}</option>   
-                            </c:forEach>
-                        </select> 
-                        <br>
-                        <label>Genero</label>                        
-                         <select name="IdGenero" id="genero" class="form-control">
-                            <c:forEach var="genero" items="${lsGeneros}">
-                                <option value="${genero.id}" >${genero.nombre}</option>   
-                            </c:forEach>
-                        </select>  
-                        <br>
-                        <input type="submit" value="Agregar" class="btn btn-success">
+                    <table class="table table-hover table-responsive-md table-responsive-sm table-responsive-lg">
+                        <thead class="bg-secondary">
+                            <tr>                               
+                                <th style="color: whitesmoke;">Pelicula</th>                               
+                                <th style="color: whitesmoke;">Genero</th>        
+                                <th style="color: whitesmoke;">Actualizar</th>     
+                                <th style="color: whitesmoke;">Eliminar</th>
+                            </tr>
+                        </thead>
 
-                    </form>
+                        <tbody>
+                        <c:forEach var="PelisGenero" items="${lsPelisGenero}">
+                            <tr>                               
+                                <td>${PelisGenero.nomPelicula}</td>                                   
+                                <td>${PelisGenero.nomGenero}</td>   
+                                <td>
+                                    <a href="editarPelisGenero.htm?id=${PelisGenero.id}" class="btn btn-outline-success">Editar</a>
+                                </td>
+                                <td>
+                                    <a onclick="return confirm('¿Esta seguro?');" href="deletePelisGenero.htm?id=${PelisGenero.id}" class="btn btn-outline-danger">Eliminar</a>
+                                </td>
+
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="card-footer text-muted bg-dark">
-                    <a class="btn btn-outline-success" href="indexSerieGenero.htm">Volver</a>
+                    <a class="btn btn-success" href="index.htm">Volver</a>
                 </div>
             </div>
         </div>
-        <!--Fin Agregar Datos -->
+        <!--Fin Mostrar Datos -->
     </body>
 </html>

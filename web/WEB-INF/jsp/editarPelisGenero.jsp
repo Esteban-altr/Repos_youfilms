@@ -1,9 +1,9 @@
 <%-- 
-    Document   : agregarSerieGenero
-    Created on : 07-sep-2020, 17:47:46
-    Author     : User
+    Document   : editarPelisGenero
+    Created on : 11/09/2020, 08:49:27 PM
+    Author     : Usuario
 --%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,7 +14,7 @@
         <script src="js/jquery-3.4.1.js" type="text/javascript"></script>
         <script src="js/jquery.min.js" type="text/javascript"></script>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
-        <title>JSP Page</title>
+        <title>EDITAR</title>
     </head>
     <body>
         <!-- Navbar -->
@@ -66,30 +66,42 @@
 
 
 
-        <!-- Agregar Datos -->
+
+        <!-- Actualizar Datos -->
         <div class="container mt-5">
             <div class="card border-info">
                 <div class="card-header bg-dark">
-                    <h5 style="color: whitesmoke;">Agregar SerieGenero</h5>
+                    <h5 style="color: whitesmoke;">Editar SerieGenero</h5>
                 </div>
-                <div class="card-body text-center">
-
-                    <form method="POST">                  
-                        <label>Serie</label>                       
-                         <select name="IdSerie" id="serie" class="form-control">
-                            <c:forEach var="serie" items="${lsSeries}">
-                                <option value="${serie.id}" >${serie.Nombre}</option>   
-                            </c:forEach>
+                <div class="card-body text-center">                
+                     <form method="POST">
+                        <br>
+                        
+                        <label>Serie</label>
+                        <select name="IdPelicula" id="pelicula" class="form-control">
+                            <c:forEach var="pelicula" items="${lsPelicula}">
+                                <c:if test="${pelicula.id!=editPelisGenero[0].Idpelicula}">
+                                    <option value="${pelicula.id}" >${pelicula.Nombre}</option>                                     
+                                </c:if>
+                                <c:if test="${pelicula.id==editPelisGenero[0].Idpelicula}">
+                                    <option value="${pelicula.id}"  selected="">${pelicula.Nombre}</option>                                     
+                                </c:if>
+                            </c:forEach>                                    
                         </select> 
                         <br>
-                        <label>Genero</label>                        
-                         <select name="IdGenero" id="genero" class="form-control">
+                        <label>Genero</label>  
+                        <select name="IdGenero" id="genero" class="form-control">
                             <c:forEach var="genero" items="${lsGeneros}">
-                                <option value="${genero.id}" >${genero.nombre}</option>   
-                            </c:forEach>
-                        </select>  
+                                <c:if test="${genero.id!=editPelisGenero[0].idGenero}">
+                                    <option value="${genero.id}" >${genero.Nombre}</option>                                     
+                                </c:if>
+                                <c:if test="${genero.id==editPelisGenero[0].idGenero}">
+                                    <option value="${genero.id}"  selected="">${genero.Nombre}</option>                                     
+                                </c:if>
+                            </c:forEach>                                    
+                        </select> 
                         <br>
-                        <input type="submit" value="Agregar" class="btn btn-success">
+                        <input type="submit" value="Actualizar" class="btn btn-success">
 
                     </form>
                 </div>
@@ -98,6 +110,6 @@
                 </div>
             </div>
         </div>
-        <!--Fin Agregar Datos -->
+        <!--Fin Actualizar Datos -->
     </body>
 </html>
