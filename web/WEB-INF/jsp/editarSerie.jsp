@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-
+        <link href="bootstrap/css/proyecto.css" rel="stylesheet" type="text/css">
         <script src="js/popper.min.js" type="text/javascript"></script>
         <script src="js/jquery-3.4.1.js" type="text/javascript"></script>
         <script src="js/jquery.min.js" type="text/javascript"></script>
@@ -77,44 +77,51 @@
                 <div class="card-body text-center">
 
                     <form method="POST">
-                        <label>Nombre</label>
-                        <input type="text" name="Nombre" class="form-control" value="${editSerie[0].Nombre}">   
-                        <br>
-                        <label>Año</label>
-                        <input type="text" name="Ano" class="form-control" value="${editSerie[0].Ano}">   
-                        <br>
-                        <label>Cantidad Capitulos</label>
-                        <input type="text" name="CantidadTemporadas" class="form-control" value="${editSerie[0].CantidadTemporadas}">   
-                        <br>
-                        <label>Descripción</label>
-                        <input type="text" name="Descripcion" class="form-control" value="${editSerie[0].Descripcion}">   
-                        <br>
-                        <label>Genero</label>  
-                        <select name="IdGenero" id="genero" class="form-control">
-                            <c:forEach var="genero" items="${lsGeneros}">
-                                <c:if test="${genero.id!=editSerie[0].idGenero}">
-                                    <option value="${genero.id}" >${genero.Nombre}</option>                                     
-                                </c:if>
-                                <c:if test="${genero.id==editSerie[0].idGenero}">
-                                    <option value="${genero.id}"  selected="true">${genero.Nombre}</option>                                     
-                                </c:if>
-                            </c:forEach>                                    
-                        </select> 
-                        <br>
-                        <label>Temporada</label>
-                        <select name="IdTemporada" id="temporada" class="form-control">
-                            <c:forEach var="temporada" items="${lsTemporadas}">
-                                <c:if test="${temporada.id!=editSerie[0].idTemporada}">
-                                    <option value="${temporada.id}" >${temporada.nombre}</option>                                     
-                                </c:if>
-                                <c:if test="${temporada.id==editSerie[0].idTemporada}">
-                                    <option value="${temporada.id}"  selected="true">${temporada.nombre}</option>                                     
-                                </c:if>
-                            </c:forEach>                                    
-                        </select> 
-                        <br>
-                        <input type="submit" value="Actualizar" class="btn btn-success">
-
+                        <div class="imagen">
+                            <img src="${editSerie[0].LinkImg}"/>		
+                        </div>
+                        <div class="contenedor">
+                            <label>Nombre</label>
+                            <input type="text" name="Nombre" class="form-control" value="${editSerie[0].Nombre}">   
+                            <br>
+                            <label>Año</label>
+                            <input type="text" name="Ano" class="form-control" value="${editSerie[0].Ano}">   
+                            <br>
+                            <label>Cantidad Capitulos</label>
+                            <input type="text" name="CantidadTemporadas" class="form-control" value="${editSerie[0].CantidadTemporadas}">   
+                            <br>
+                            <label>Descripción</label>
+                            <input type="text" name="Descripcion" class="form-control" value="${editSerie[0].Descripcion}">   
+                            <br>
+                            <label>link img</label>
+                            <input type="text" name="LinkImg" class="form-control" value="${editSerie[0].LinkImg}">   
+                            <br>
+                            <label>Genero</label>  
+                            <select name="IdGenero" id="genero" class="form-control">
+                                <c:forEach var="genero" items="${lsGeneros}">
+                                    <c:if test="${genero.id!=editSerie[0].idGenero}">
+                                        <option value="${genero.id}" >${genero.Nombre}</option>                                     
+                                    </c:if>
+                                    <c:if test="${genero.id==editSerie[0].idGenero}">
+                                        <option value="${genero.id}"  selected="true">${genero.Nombre}</option>                                     
+                                    </c:if>
+                                </c:forEach>                                    
+                            </select> 
+                            <br>
+                            <label>Temporada</label>
+                            <select name="IdTemporada" id="temporada" class="form-control">
+                                <c:forEach var="temporada" items="${lsTemporadas}">
+                                    <c:if test="${temporada.id!=editSerie[0].idTemporada}">
+                                        <option value="${temporada.id}" >${temporada.nombre}</option>                                     
+                                    </c:if>
+                                    <c:if test="${temporada.id==editSerie[0].idTemporada}">
+                                        <option value="${temporada.id}"  selected="true">${temporada.nombre}</option>                                     
+                                    </c:if>
+                                </c:forEach>                                    
+                            </select> 
+                            <br>
+                            <input type="submit" value="Actualizar" class="btn btn-success">
+                        </div>
                     </form>
                 </div>
                 <div class="card-footer text-muted bg-dark">

@@ -15,6 +15,7 @@ public class Serie {
    private String Ano;
    private int CantidadTemporadas;
    private String Descripcion;
+   private String LinkImg;
    private int IdGenero;
    private int IdTemporada;
 
@@ -72,6 +73,14 @@ public class Serie {
 
     public void setIdTemporada(int IdTemporada) {
         this.IdTemporada = IdTemporada;
+    }
+
+    public String getLinkImg() {
+        return LinkImg;
+    }
+
+    public void setLinkImg(String LinkImg) {
+        this.LinkImg = LinkImg;
     }
    
 }

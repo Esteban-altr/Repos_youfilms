@@ -85,6 +85,7 @@
                         <br>
                         <label>Fecha de carga</label>
                         <input type="text" name="FechaLanzamiento" class="form-control">   
+                        <br>
                         <label>Link de la caratula</label>
                         <input type="text" name="LinkImg" class="form-control">   
                         <br>

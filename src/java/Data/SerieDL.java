@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Data;
-
 import Model.Serie;
 import java.util.List;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -19,15 +18,15 @@ public class SerieDL {
     List datos;
     
     public List listar() {
-        String sql = "select s.id,s.Nombre,s.Ano,s.CantidadTemporadas,s.Descripcion, g.Nombre as nomGenero, t.Nombre as nomTemporada from temporada t, serie s, genero g where s.IdGenero=g.id AND s.IdTemporada=t.id";
+        String sql = "select s.id,s.Nombre,s.Ano,s.CantidadTemporadas,s.Descripcion,s.LinkImg, g.Nombre as nomGenero, t.Nombre as nomTemporada from temporada t, serie s, genero g where s.IdGenero=g.id AND s.IdTemporada=t.id";
         datos = jdbctemplate.queryForList(sql);
         return datos;
     }
     
 public void insertar(Serie s){
         String sql="insert into serie "
-                + "(Nombre,Ano,CantidadTemporadas,Descripcion,IdGenero,IdTemporada) values (?,?,?,?,?,?)";       
-        jdbctemplate.update(sql, s.getNombre(), s.getAno(), s.getCantidadTemporadas(),s.getDescripcion(), s.getIdGenero(), s.getIdTemporada());        
+                + "(Nombre,Ano,CantidadTemporadas,Descripcion,LinkImg,IdGenero,IdTemporada) values (?,?,?,?,?,?,?)";       
+        jdbctemplate.update(sql, s.getNombre(), s.getAno(), s.getCantidadTemporadas(),s.getDescripcion(),s.getLinkImg(), s.getIdGenero(), s.getIdTemporada());        
     }
 
 public List buscar(int id){
@@ -40,8 +39,8 @@ public List buscar(int id){
 
 public void actualizar(Serie s){
         String sql="update serie set "
-                + "Nombre=?,Ano=?,CantidadTemporadas=?,Descripcion=?,IdGenero=?,IdTemporada=?  where id=?";
-                jdbctemplate.update(sql,s.getNombre(),s.getAno(),s.getCantidadTemporadas(),s.getDescripcion(),s.getIdGenero(),s.getIdTemporada(), s.getId());        
+                + "Nombre=?,Ano=?,CantidadTemporadas=?,Descripcion=?,LinkImg=?,IdGenero=?,IdTemporada=?  where id=?";
+                jdbctemplate.update(sql,s.getNombre(),s.getAno(),s.getCantidadTemporadas(),s.getDescripcion(),s.getLinkImg(),s.getIdGenero(),s.getIdTemporada(), s.getId());        
     }
 
 public void eliminar(int id){
