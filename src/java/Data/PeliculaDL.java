@@ -28,7 +28,7 @@ public class PeliculaDL {
     }
 
     public void insertar(Pelicula p) {
-        String sql = "insert into pelicula " + "(Nombre, Ano, FechaLanzamiento, linkImg, IdGenero) values (?,?,?,?)";
+        String sql = "insert into pelicula " + "(Nombre, Ano, FechaLanzamiento, linkImg, IdGenero) values (?, ?, ?, ?, ?)";
         jdbctemplate.update(sql, p.getNombre(), p.getAno(), p.getFechaLanzamiento(), p.getLinkImg(), p.getIdGenero());
     }
 
