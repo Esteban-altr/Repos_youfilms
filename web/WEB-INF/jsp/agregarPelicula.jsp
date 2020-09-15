@@ -82,7 +82,7 @@
                         <input type="text" name="Ano" class="form-control">   
                         <br>
                         <label>Fecha de carga</label>
-                        <input type="text" name="FechaLanzamiento" class="form-control">   
+                        <input type="date" name="FechaLanzamiento" class="form-control">   
                         <br>
                         <label>Link de la caratula</label>
                         <input type="text" name="LinkImg" class="form-control">   
