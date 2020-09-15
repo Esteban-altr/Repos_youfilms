@@ -35,9 +35,7 @@
                     <li class="nav-item">
                         <a href="indexCapitulo.htm" class="nav-link">Capitulo</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="indexDetalleTemporada.htm" class="nav-link">DetalleTemporada</a>
-                    </li>
+                    
                     <li class="nav-item">
                         <a href="indexGenero.htm" class="nav-link">Genero</a>
                     </li>
